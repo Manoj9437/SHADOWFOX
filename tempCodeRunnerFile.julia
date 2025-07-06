@@ -1,0 +1,38 @@
+# Initial Justice League members
+justice_league = ["Superman", "Batman", "Wonder Woman", "Flash", "Aquaman", "Green Lantern"]
+
+# 1. Calculate number of members
+print(f"Number of members: {len(justice_league)}")
+
+# 2. Add Batgirl and Nightwing
+justice_league.extend(["Batgirl", "Nightwing"])
+print(f"After recruitment: {justice_league}")
+
+# 3. Move Wonder Woman to the beginning (leader)
+if "Wonder Woman" in justice_league:
+    justice_league.remove("Wonder Woman")
+    justice_league.insert(0, "Wonder Woman")
+print(f"Wonder Woman is now leader: {justice_league}")
+
+# 4. Separate Aquaman and Flash by moving Green Lantern or Superman between them
+# Find their positions
+pos_aquaman = justice_league.index("Aquaman")
+pos_flash = justice_league.index("Flash")
+
+# Decide who to move between them - let's choose "Green Lantern"
+# Remove Green Lantern and reinsert between Aquaman and Flash
+if "Green Lantern" in justice_league:
+    justice_league.remove("Green Lantern")
+    # After removal, re-calculate Flash position since list changed
+    pos_flash = justice_league.index("Flash")
+    justice_league.insert(pos_flash, "Green Lantern")
+print(f"Separated Aquaman and Flash: {justice_league}")
+
+# 5. Replace existing list with new members
+justice_league = ["Cyborg", "Shazam", "Hawkgirl", "Martian Manhunter", "Green Arrow"]
+print(f"New Justice League team: {justice_league}")
+
+# 6. Sort the Justice League alphabetically and assign leader
+justice_league.sort()
+print(f"Justice League sorted: {justice_league}")
+print(f"New leader: {justice_league[0]}")

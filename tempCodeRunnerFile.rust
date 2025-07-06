@@ -1,0 +1,16 @@
+#4.2
+cities_aus = ["Sydney", "Melbourne", "Brisbane", "Perth"]
+cities_uae = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"]
+cities_ind = ["Mumbai", "Bangalore", "Chennai", "Delhi"]
+user_city = input("Please enter the name of a city: ").strip().lower()
+aus_lower = [city.lower() for city in cities_aus]
+uae_lower = [city.lower() for city in cities_uae]
+ind_lower = [city.lower() for city in cities_ind]
+if user_city in aus_lower:
+    print(f"{user_city.title()} belongs to Australia.")
+elif user_city in uae_lower:
+    print(f"{user_city.title()} is located in the UAE.")
+elif user_city in ind_lower:
+    print(f"{user_city.title()} is a city in India.")
+else:
+    print(f"Sorry, I couldn't identify the country for {user_city.title()}.")
